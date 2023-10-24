@@ -10,6 +10,7 @@ const Home = () => {
     const key = await getRandomKey();
     navigator(`/${key.data}`);
   };
+  console.log(process.env)
 
   return (
     <>
