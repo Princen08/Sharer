@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import java.util.Collections;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class ShareApplication {
@@ -13,10 +14,10 @@ public class ShareApplication {
 		SpringApplication.run(ShareApplication.class, args);
 	}
 	@Bean
-    public CorsConfiguration corsConfiguration() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Collections.emptyList());
-        return configuration;
-    }
+	public CorsConfiguration corsConfiguration() {
+		CorsConfiguration configuration = new CorsConfiguration();
+		configuration.setAllowedOrigins(Arrays.asList("*"));
+		return configuration;
+	}
 
 }
