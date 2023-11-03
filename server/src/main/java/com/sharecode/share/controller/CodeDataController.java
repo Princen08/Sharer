@@ -11,7 +11,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-@CrossOrigin
+@CrossOrigin(allowedHeaders =
+    {"Orgin", "X-Requested-With", "Content-Type", "Accept", "Authorization"},
+    methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, 
+    RequestMethod.DELETE}
+ )
 @RestController
 public class CodeDataController {
     @Autowired
