@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.Random;
 
 @CrossOrigin(allowedHeaders =
-    {"Orgin", "X-Requested-With", "Content-Type", "Accept", "Authorization"},
+    {"Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"},
     methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, 
     RequestMethod.DELETE}
  )
