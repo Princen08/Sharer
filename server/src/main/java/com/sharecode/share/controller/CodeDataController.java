@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-@CrossOrigin
+@CrossOrigin(origins = "https://codesharer.vercel.app")
 @RestController
 public class CodeDataController {
     @Autowired
