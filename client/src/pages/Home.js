@@ -8,10 +8,9 @@ const Home = () => {
 
   const handleClick = async () => {
     const key = await getRandomKey();
-    navigator(`/${key.data}`);
+    navigator(`/${key.data.key}`);
   };
-  console.log(process.env)
-
+ 
   return (
     <>
       <div className="flex flex-col" style={{ fontFamily: "Inter" }}>

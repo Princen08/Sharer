@@ -11,18 +11,22 @@ const Textarea = () => {
   const param = useParams();
   const getData = async () => {
     const res = await getCode(param.id);
-    if (res?.data?.data) setCode(res?.data?.data);
+    if(res?.data?.data?.data?.length > 0) {
+       setCode(res?.data?.data?.data)
+    }
   };
   const updateData = async () => {
     await updateCode(code, param.id);
   };
 
   useEffect(() => {
-    updateData();
+     updateData();
   }, [code]);
+
   useEffect(() => {
     getData();
   }, []);
+  
   const hightlightWithLineNumbers = (input, language) =>
     highlight(input, language)
       .split("\n")
