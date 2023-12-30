@@ -8,15 +8,12 @@ const ReactFormDataSchema = new mongoose.Schema({
   },
   data: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,
-    required: true,
   },
   updatedAt: {
     type: Date,
-    required: true,
   },
 });
 
