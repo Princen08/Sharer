@@ -8,15 +8,22 @@ import { updateCode } from "../api/updateCode";
 
 const Textarea = () => {
   const [code, setCode] = useState("");
+  const [initial, setInitial] = useState(true)
   const param = useParams();
   const getData = async () => {
     const res = await getCode(param.id);
+    
     if(res?.data?.data?.data?.length > 0) {
        setCode(res?.data?.data?.data)
     }
   };
   const updateData = async () => {
-    await updateCode(code, param.id);
+    if(initial) {
+      setInitial(false);
+    } else {
+      const res = await updateCode(code, param.id);
+      console.log(res);
+    }
   };
 
   useEffect(() => {

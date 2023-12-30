@@ -42,7 +42,7 @@ router.post("/updateCode", async(req, res) => {
             updatedAt: new Date().getTime()
         }
         await codeData.updateOne({id: id}, { $set: updatedData})
-        return res.send({status: "Sucess", message: "Data updated sucessfully."})
+        return res.send({status: "Sucess", data: data, message: "Data updated sucessfully."})
     } else {
        // need to create new documenet
       //  await addData(id, data);
@@ -53,7 +53,7 @@ router.post("/updateCode", async(req, res) => {
         updatedAt: new Date().getTime()
       })
        await newCodeData.save();
-       return res.send({status: "Sucess", message: "Data added sucessfully."})
+       return res.send({status: "Sucess", data: data, message: "Data added sucessfully."})
     }
 })
 
