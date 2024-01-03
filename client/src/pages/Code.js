@@ -10,18 +10,17 @@ var temp = "";
 
 const Code = () => {
   const [code, setCode] = useState("");
-  const [updatedCode, setUpdatedCode] = useState("")
-  const [initial, setInitial] = useState(true);
   const { id: documentId } = useParams()
   const [socket, setSocket] = useState()
  
   useEffect(() => {
+    console.log(process.env.REACT_APP_API_BASE_URL)
     const s = io(`${process.env.REACT_APP_API_BASE_URL}`)
     setSocket(s)
 
-    return () => {
-      s.disconnect()
-    }
+    // return () => {
+    //   s.disconnect()
+    // }
   }, []);
 
   useEffect(() => {
