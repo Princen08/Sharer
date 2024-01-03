@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { getRandomKey } from "../api/getRandomKey";
 import { useNavigate } from "react-router-dom";
 
+
 const Home = () => {
   const navigator = useNavigate();
-
+  
   const handleClick = async () => {
     const key = await getRandomKey();
     navigator(`/${key.data.key}`);
   };
- 
+
   return (
     <>
       <div className="flex flex-col" style={{ fontFamily: "Inter" }}>

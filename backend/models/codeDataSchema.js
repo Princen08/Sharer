@@ -9,13 +9,7 @@ const ReactFormDataSchema = new mongoose.Schema({
   data: {
     type: String,
   },
-  createdAt: {
-    type: Date,
-  },
-  updatedAt: {
-    type: Date,
-  },
-});
+}, {timestamps: true});
 
 const CodeData = mongoose.model("CodeData", ReactFormDataSchema);
 module.exports = CodeData;

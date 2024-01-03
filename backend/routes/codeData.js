@@ -2,7 +2,7 @@ const router = require("express").Router();
 const crypto = require("crypto");
 
 const codeData = require("../models/codeDataSchema");
-const CodeData = require("../models/codeDataSchema");
+
 
 async function generateUniqueKey() {
   let isUnique = false;
@@ -38,19 +38,16 @@ router.post("/updateCode", async(req, res) => {
     const exist = await codeData.findOne({id: id}) 
     if(exist) {
         const updatedData = {
-            data: data,
-            updatedAt: new Date().getTime()
+            data: data
         }
         await codeData.updateOne({id: id}, { $set: updatedData})
         return res.send({status: "Sucess", data: data, message: "Data updated sucessfully."})
     } else {
        // need to create new documenet
       //  await addData(id, data);
-      const newCodeData = new CodeData({
+      const newCodeData = new codeData({
         id: id,
-        data: data,
-        createdAt: new Date().getTime(),
-        updatedAt: new Date().getTime()
+        data: data
       })
        await newCodeData.save();
        return res.send({status: "Sucess", data: data, message: "Data added sucessfully."})
