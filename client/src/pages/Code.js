@@ -14,13 +14,12 @@ const Code = () => {
   const [socket, setSocket] = useState()
  
   useEffect(() => {
-    console.log(process.env.REACT_APP_API_BASE_URL)
     const s = io(`${process.env.REACT_APP_API_BASE_URL}`)
     setSocket(s)
 
-    // return () => {
-    //   s.disconnect()
-    // }
+    return () => {
+      s.disconnect()
+    }
   }, []);
 
   useEffect(() => {
@@ -59,8 +58,8 @@ const Code = () => {
 
   return (
     <>
-      <div className="">
-        <Navbar />
+      <div>
+        <Navbar content = {{code: code}} />
         <Textarea
           codeData={{
             code: code,
