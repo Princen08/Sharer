@@ -59,7 +59,7 @@ const Code = () => {
   return (
     <>
       <div>
-        <Navbar content = {{code: code}} />
+        <Navbar content = {{code: code, page: "code"}} />
         <Textarea
           codeData={{
             code: code,

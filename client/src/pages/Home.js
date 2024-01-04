@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col" style={{ fontFamily: "Inter" }}>
-        <Navbar></Navbar>
+        <Navbar content = {{page: "home"}} ></Navbar>
         <div className="flex flex-col items-center mt-4">
           <button
             onClick={handleClick}
